@@ -33,5 +33,16 @@
     <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui-sfml-master\imgui-SFML.cpp">
       <Filter>Quelldateien\imGUI</Filter>
     </ClCompile>
+    <ClCompile Include="CAttractors.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CAttractors.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -23,7 +23,12 @@
     <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui.cpp" />
     <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui_demo.cpp" />
     <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui_draw.cpp" />
+    <ClCompile Include="CAttractors.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CAttractors.hpp" />
+    <ClInclude Include="Common.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
