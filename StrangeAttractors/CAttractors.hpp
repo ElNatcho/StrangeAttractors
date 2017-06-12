@@ -7,6 +7,8 @@
 #include<cmath>
 #include"Common.hpp"
 
+#define PI 3.141592653589793
+
 // CAttractors
 class CAttractors {
 public:
@@ -17,15 +19,24 @@ public:
 
 	// -- Methoden --
 	void reset();
-	void addAttractor(sf::Vector2f &pos, float rad = 5.F, sf::Color col = sf::Color::Red);
+	void addAttractor(sf::Vector2f &pos, float rad = 2.F, sf::Color col = sf::Color::Red);
+	void addShape(int edges, float shape_rad, sf::Vector2f &pos, float rad = 2.F, sf::Color col = sf::Color::Red);
+
+	void hop();
 
 	void render(sf::RenderWindow &rWin);
+
+	// -- Public Vars --
+	sf::CircleShape *tracePoint;
+	sf::CircleShape *dot;
 
 private:
 
 	// -- Member Vars --
 	std::vector<sf::CircleShape> *_attractors;
 	sf::CircleShape *_tempCir;
+
+	std::vector<sf::CircleShape> *_dots;
 
 };
 
