@@ -11,8 +11,8 @@ int main() {
 
 	CAttractors *attr = new CAttractors();
 	
-	attr->addShape(5, 400.F, sf::Vector2f(400.F, 400.F));
-	attr->dot->setRadius(1.F);
+	attr->addShape(6, 400.F, sf::Vector2f(400.F, 400.F));
+	attr->dot->setRadius(3.F);
 
 	while (window->isOpen()) {
 		while (window->pollEvent(*sfEvent)) {

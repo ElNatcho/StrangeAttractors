@@ -80,4 +80,9 @@ CAttractors::~CAttractors() {
 	// Free Mem
 	_attractors->clear();
 	SAFE_DELETE(_attractors);
+	_dots->clear();
+	SAFE_DELETE(_dots);
+	SAFE_DELETE(_tempCir);
+	SAFE_DELETE(dot);
+	SAFE_DELETE(tracePoint);
 }
