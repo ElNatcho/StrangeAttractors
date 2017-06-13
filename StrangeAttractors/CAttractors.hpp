@@ -21,8 +21,14 @@ public:
 	void reset();
 	void addAttractor(sf::Vector2f &pos, float rad = 2.F, sf::Color col = sf::Color::Red);
 	void addShape(int edges, float shape_rad, sf::Vector2f &pos, float rad = 2.F, sf::Color col = sf::Color::Red);
+	
+	void setEdgeColor(sf::Color &col);
+	void setEdgeRadius(float r);
 
 	void hop();
+
+	void setDotColor(sf::Color &col);
+	void setDotRadius(float r);
 
 	void render(sf::RenderWindow &rWin);
 

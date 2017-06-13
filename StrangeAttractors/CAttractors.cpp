@@ -4,9 +4,9 @@
 CAttractors::CAttractors() {
 	// Alloc Mem
 	_attractors = new std::vector<sf::CircleShape>();
-	tracePoint = new sf::CircleShape();
+	tracePoint  = new sf::CircleShape();
 	_dots = new std::vector<sf::CircleShape>();
-	dot = new sf::CircleShape();
+	dot   = new sf::CircleShape();
 
 	// Werte setzen
 	tracePoint->setFillColor(sf::Color::Green);
@@ -14,12 +14,15 @@ CAttractors::CAttractors() {
 
 	dot->setFillColor(sf::Color::Blue);
 	dot->setRadius(2.F);
+
+	_tempCir = nullptr;
 }
 
 // Methode setzt den Attractors-Vector zurück
 //
 void CAttractors::reset() {
 	_attractors->clear();
+	_dots->clear();
 }
 
 // Methode fügt einen Attractor hinzu
@@ -51,6 +54,22 @@ void CAttractors::addShape(int edges, float shape_rad, sf::Vector2f &pos, float 
 	}
 }
 
+// Methode legt die Farbe der Ecken fest
+// @param col: Neue Farbe
+//
+void CAttractors::setEdgeColor(sf::Color &col) {
+	for (int i = 0; i < _attractors->size(); i++)
+		_attractors->at(i).setFillColor(col);
+}
+
+// Methode legt den Radius der Ecken-Punkte fest
+// @param r: Neuer Radius
+//
+void CAttractors::setEdgeRadius(float r) {
+	for (int i = 0; i < _attractors->size(); i++)
+		_attractors->at(i).setRadius(r);
+}
+
 // Methode führt einen Hop durch (Der TracePoint wird von einem Attractor zufällig angezogen)
 //
 void CAttractors::hop() {
@@ -62,17 +81,34 @@ void CAttractors::hop() {
 		(_attractors->at(i).getPosition().y - tracePoint->getPosition().y) * 0.6);
 }
 
+// Methode legt die Farbe der Dots fest
+// @param col: Neue Farbe
+//
+void CAttractors::setDotColor(sf::Color &col) {
+	dot->setFillColor(col);
+	for (int i = 0; i < _dots->size(); i++)
+		_dots->at(i).setFillColor(col);
+}
+
+// Methode legt den Radius der Dots fest
+// @param r: Neuer Radius
+//
+void CAttractors::setDotRadius(float r) {
+	for (int i = 0; i < _dots->size(); i++)
+		_dots->at(i).setRadius(r);
+}
+
 // Methode rendert die Attractors 
 // @param rWin: Aktuelles Fenster
 //
 void CAttractors::render(sf::RenderWindow &rWin) {
-	rWin.draw(*tracePoint);
-	for (int i = 0; i < _attractors->size(); i++) {
-		rWin.draw(_attractors->at(i));
-	}
 	for (int i = 0; i < _dots->size(); i++) {
 		rWin.draw(_dots->at(i));
 	}
+	for (int i = 0; i < _attractors->size(); i++) {
+		rWin.draw(_attractors->at(i));
+	}
+	rWin.draw(*tracePoint);
 }
 
 // -- Destruktor --

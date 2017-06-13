@@ -21,20 +21,23 @@
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui_draw.cpp">
-      <Filter>Quelldateien\imGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui_demo.cpp">
-      <Filter>Quelldateien\imGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui.cpp">
-      <Filter>Quelldateien\imGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui-sfml-master\imgui-SFML.cpp">
-      <Filter>Quelldateien\imGUI</Filter>
-    </ClCompile>
     <ClCompile Include="CAttractors.cpp">
       <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="CGUI.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_demo.cpp">
+      <Filter>Quelldateien\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui-SFML.cpp">
+      <Filter>Quelldateien\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_draw.cpp">
+      <Filter>Quelldateien\imGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui.cpp">
+      <Filter>Quelldateien\imGUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +45,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Common.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CGUI.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

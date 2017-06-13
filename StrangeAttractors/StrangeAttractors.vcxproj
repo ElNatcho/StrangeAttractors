@@ -19,15 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui-sfml-master\imgui-SFML.cpp" />
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui.cpp" />
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui_demo.cpp" />
-    <ClCompile Include="..\..\..\xX_LIBs_Xx\C++\imgui\imgui-master\imgui_draw.cpp" />
     <ClCompile Include="CAttractors.cpp" />
+    <ClCompile Include="CGUI.cpp" />
+    <ClCompile Include="imgui-SFML.cpp" />
+    <ClCompile Include="imgui.cpp" />
+    <ClCompile Include="imgui_demo.cpp" />
+    <ClCompile Include="imgui_draw.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAttractors.hpp" />
+    <ClInclude Include="CGUI.hpp" />
     <ClInclude Include="Common.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
