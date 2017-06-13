@@ -5,3 +5,6 @@ wird durch wiederholen eines Hops ein Muster erzeugt (Bei Figuren mit mehr als 3
 als 0,5 sein).
 
 ![tmp](https://user-images.githubusercontent.com/21142935/27095040-8528be70-506c-11e7-986e-39cb24d03292.PNG)
+
+Dieses Programm ist eine C++/SFML/imGUI Implementierung des in diesem Video(https://www.youtube.com/watch?v=tdFw75whhIo) gezeigten
+Programms.
