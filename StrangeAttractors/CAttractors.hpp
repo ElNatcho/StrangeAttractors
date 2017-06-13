@@ -25,7 +25,7 @@ public:
 	void setEdgeColor(sf::Color &col);
 	void setEdgeRadius(float r);
 
-	void hop();
+	void hop(float relDist);
 
 	void setDotColor(sf::Color &col);
 	void setDotRadius(float r);

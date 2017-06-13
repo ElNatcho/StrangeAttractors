@@ -72,13 +72,13 @@ void CAttractors::setEdgeRadius(float r) {
 
 // Methode führt einen Hop durch (Der TracePoint wird von einem Attractor zufällig angezogen)
 //
-void CAttractors::hop() {
+void CAttractors::hop(float relDist) {
 	_dots->push_back(sf::CircleShape(*dot));
 	_dots->at(_dots->size() - 1).setPosition(tracePoint->getPosition());
 	int i = rand() %  _attractors->size();
 	tracePoint->move(
-		(_attractors->at(i).getPosition().x - tracePoint->getPosition().x) * 0.6,
-		(_attractors->at(i).getPosition().y - tracePoint->getPosition().y) * 0.6);
+		(_attractors->at(i).getPosition().x - tracePoint->getPosition().x) * relDist,
+		(_attractors->at(i).getPosition().y - tracePoint->getPosition().y) * relDist);
 }
 
 // Methode legt die Farbe der Dots fest
@@ -94,6 +94,7 @@ void CAttractors::setDotColor(sf::Color &col) {
 // @param r: Neuer Radius
 //
 void CAttractors::setDotRadius(float r) {
+	dot->setRadius(r);
 	for (int i = 0; i < _dots->size(); i++)
 		_dots->at(i).setRadius(r);
 }

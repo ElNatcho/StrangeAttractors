@@ -18,7 +18,11 @@
 #define EDGE_R_IN "Ecken Radius"
 #define TP_R_IN "TracePoint Radius"
 
+#define REL_HOP_DIST "Relative Hop-Entfernung"
+
 #define ONE_HOP "Einen Hop"
+
+#define RESET_BTN "Reset"
 
 // CGUI
 class CGUI {
@@ -47,6 +51,7 @@ private:
 	} _cir_radii;
 
 	bool *_hopping;
+	float *_relHopDist;
 	std::string *_hopCtrlBtn_lbl;
 
 };

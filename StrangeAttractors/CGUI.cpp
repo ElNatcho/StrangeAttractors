@@ -4,6 +4,7 @@
 CGUI::CGUI(CAttractors *attr) {
 	// Alloc Mem
 	_hopCtrlBtn_lbl = new std::string();
+	_relHopDist = new float;
 	_edges_num = new int;
 	_hopping = new bool;
 
@@ -20,6 +21,8 @@ CGUI::CGUI(CAttractors *attr) {
 
 	*_hopping = false;
 	*_hopCtrlBtn_lbl = "Starten";
+
+	*_relHopDist = 0.50F;
 }
 
 // Methode verwaltet und zeigt das GUI an
@@ -70,11 +73,17 @@ bool CGUI::showGUI(sf::RenderWindow &rWin, CAttractors *curAttr) {
 	// TracePoint-Radius abfragen
 	if (ImGui::InputFloat(TP_R_IN, &_cir_radii.z))
 		curAttr->tracePoint->setRadius(_cir_radii.z);
+	
+	// Relative Hop-Entfernung abfragen
+	if (ImGui::SliderFloat(REL_HOP_DIST, _relHopDist, 0.F, 1.F)) {
+		curAttr->reset();
+		curAttr->addShape(*_edges_num, 400.F, sf::Vector2f(400.F, 400.F));
+	}
 
 	// Start/Stop-Knopf
 	if (*_hopping) {
 		*_hopCtrlBtn_lbl = "Stoppen";
-		curAttr->hop();
+		curAttr->hop(*_relHopDist);
 	} else {
 		*_hopCtrlBtn_lbl = "Starten";
 	}
@@ -84,7 +93,14 @@ bool CGUI::showGUI(sf::RenderWindow &rWin, CAttractors *curAttr) {
 
 	// Abfragen ob ein hop gemacht werden soll
 	if (ImGui::Button(ONE_HOP))
-		curAttr->hop();
+		curAttr->hop(*_relHopDist);
+
+	// Reset Knopf abfragen
+	if (ImGui::Button(RESET_BTN)) {
+		curAttr->reset();
+		curAttr->addShape(*_edges_num, 400.F, sf::Vector2f(400.F, 400.F));
+	}
+
 
 	ImGui::End();
 
@@ -94,6 +110,7 @@ bool CGUI::showGUI(sf::RenderWindow &rWin, CAttractors *curAttr) {
 // -- Destruktor --
 CGUI::~CGUI() {
 	SAFE_DELETE(_hopCtrlBtn_lbl);
+	SAFE_DELETE(_relHopDist);
 	SAFE_DELETE(_edges_num);
 	SAFE_DELETE(_hopping);
 }
